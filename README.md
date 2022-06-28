@@ -5,8 +5,8 @@ The handler are for [discord.js](https://github.com/discordjs/discord.js, "disco
 
 ## Current handler
 
-|Name|function|Link|Discord.js version*|
+|Name|function|Link|Discord.js version¹|
 |----|--------|----|------------------|
 |ReactionMenuHandler | Allows you to create a quick reaction menu, with a few settings to change | [.js](https://github.com/Johannes7k75/discordHandler/blob/main/ReactionMenuHandler.js) | [13.8.1](https://discord.js.org/#/docs/discord.js/13.8.1/general/welcome)
 
-* The version does not have to affect the behavior
+¹The version does not have to affect the behavior
