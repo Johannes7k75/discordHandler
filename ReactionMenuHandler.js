@@ -2,6 +2,7 @@ const { Client, MessageEmbed, Role, Intents, Message, MessageReaction, User } = 
 
 /** 
  * { color: "DARK_PURPLE", channelId: "808428891718942760", nonToggle: true, emojiRols: [{ emoji: "👑", role: "743864966360334466" }, { emoji: "💎", role: "962353305797951598" }, ]};
+ * nonToggle default is false
  */
 module.exports = class ReactionMenuHandler {
 
@@ -62,6 +63,7 @@ module.exports = class ReactionMenuHandler {
     /**
      * 
      * @param {Message} message 
+     * @returns 
      */
     addReactionHandler(message) {
         message.client.on("messageReactionAdd", (reaction, user) => {
@@ -84,7 +86,7 @@ module.exports = class ReactionMenuHandler {
      * @param {Boolean} add
      */
     handleReaction(reaction, user, add) {
-        const role = reaction.client.guilds.cache.get(reaction.message.guild.id).roles.cache.get(this.emojiRols.find(emojiRole => emojiRole.emoji === reaction.emoji.name).role);
+        const role = reaction.client.guilds.cache.get(reaction.message.guild.id).roles.cache.get(this.emojiRols.find(emojiRole => emojiRole.emoji === reaction.emoji.toString()).role);
         const member = reaction.message.guild.members.cache.get(user.id);
         if (this.reactionToggle) reaction.users.remove(user.id);
 
